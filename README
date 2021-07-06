@@ -1,0 +1,33 @@
+Welcome to the July 2021 Beginning Python class!
+
+This Git repo is mostly for your reference.  All the HTML slide
+decks used in class are stored here, for your review.  You can find
+the exercise text here, as well
+
+DIRECTORIES IN THIS REPO
+
+html: This contains the slides we use in class.  Open any of the
+.html files with your browser to see that deck's slides.  Navigate
+using the arrow keys.  Most movements are to the right, but some decks
+have a downward track as well (look for the arrows in the
+lower-right corner as a hint).  Press the escape key to see a map of
+slides.
+
+exercises: Find expanded text for exercises here.
+
+ACCESSING THIS REPO
+
+Access this repo through your web browser, at:
+
+https://github.com/IanJSeattle/beginning_python_jul2021
+
+You can download the whole thing by clicking on the green Code button
+above, and selecting "Download ZIP" to download a zip file of the repo.
+
+If you already know how to use Git, feel free to clone the repo to your
+own machine.
+
+CLASS TIMES
+
+We meet every Thursday at 1 PM Pacific time (4 pm Eastern time).
+Contact Ian or Maria if you need the Zoom link.
