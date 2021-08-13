@@ -1,0 +1,13 @@
+In a new file, create three new lists, which will represent hands in a
+card game.  Each list should contain three card dicts.  Feel free
+to use the code from Exercise 16-2 as a jump start point.
+
+Create a new function, which will return the total number of points in
+a hand.  Inside the function, use a for loop to iterate over each of
+the card dicts passed into the function as an argument, count up the
+points, then print the phrase, "This hand is worth X points."
+
+Outside the function, write code that calls your new function three
+times, once for each hand.  The end result should be to see "This hand
+is worth X points" three times, with the appropriate number replacing
+X.

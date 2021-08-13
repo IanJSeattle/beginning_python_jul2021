@@ -1,0 +1,13 @@
+In a new file, create a new dict.  This dict should have the names of
+people as the keys, and strings containing their favorite food as the
+values.  Put five person/food pairs into the dict.
+
+Using a for loop, print out each person's favorite food, with the
+following format:
+
+{name}'s favorite food is {food}
+
+Hints:
+
+Declaring a dictionary: my_dict = {'key1': 'value1', 'key2': 'value2'}
+Getting both key and value out of a dictionary: my_dict.items()

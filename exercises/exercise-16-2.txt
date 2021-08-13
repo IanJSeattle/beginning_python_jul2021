@@ -1,0 +1,10 @@
+In a new file, create a list, which contains three dictionaries.  Each
+dict should represent a playing card, with a suit (eg, 'hearts' or
+'spades') and a value (eg, one of 2 through 10).
+
+In a for loop, iterate over the list of cards.  For each card, print
+out the value and the suit of the card, and when the loop is done,
+print out the total value of all the cards.
+
+Hint: to access a particular key in a dict, use the syntax
+my_dict['particular key']
