@@ -4,11 +4,13 @@ class CardSenseError(Exception):
     """ this error is thrown when the card doesn't make sense """
 
 class Card:
+    numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+    numbers = [str(num) for num in numbers]
     values = {'J': 10, 'Q': 10, 'K': 10, 'A': 11}
     suits = ['hearts', 'diamonds', 'clubs', 'spades']
 
     def __init__(self, value, suit):
-        if not self.check_value(value):
+        if not self.validate_value(value):
             raise CardSenseError(f"{value} isn't a valid value")
         if suit not in self.suits:
             raise CardSenseError(f'{suit} is not a valid suit')
@@ -29,10 +31,14 @@ class Card:
             return self.values[self.value]
         return int(self.value)
 
-    def check_value(self, value):
+    def validate_value(self, value):
         # is it a valid face card?
         if value in self.values:
             return True
+
+        # is it a string like it should be?
+        if not isinstance(value, str):
+            return False
 
         # is it actually a number?
         try:
