@@ -47,3 +47,7 @@ class Deck:
         # in a separate file, create a new Deck object with an empty
         # list of cards, call add_full_deck() on that deck, and check
         # to make sure you have all the cards you would expect.
+        for value in all_values:
+            for suit in Card.suits:
+                self.cards.append(Card(value, suit))
+

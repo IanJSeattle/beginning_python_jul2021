@@ -23,8 +23,14 @@ class Card:
     def __str__(self):
         values = {'J': 'jack', 'Q': 'queen', 'K': 'king', 'A': 'ace'}
         if self.value in values:
-            return f'{values[self.value]} of {self.suit}'
+            return f'{values[self.value].title()} of {self.suit}'
         return f'{self.value} of {self.suit}'
+
+    def __eq__(self, other):
+        return self.value == other.value and self.suit == other.suit
+
+    def __lt__(self, other):
+        return self.points() < other.points()
 
     def points(self):
         if self.value in self.values:
