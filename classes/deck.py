@@ -51,3 +51,9 @@ class Deck:
             for suit in Card.suits:
                 self.cards.append(Card(value, suit))
 
+    def check_value(self):
+        """ return the number of points this hand is worth """
+        total = 0
+        for card in self.cards:
+            total += card.points()
+        return total

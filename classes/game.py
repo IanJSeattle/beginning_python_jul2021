@@ -10,6 +10,7 @@ def main():
     print('Welcome to blackjack!')
 
     # set up dealer's deck
+    dealer = Player('Dealer')
     dealer_deck = Deck([])
     for num in range(10):
         dealer_deck.add_full_deck()
@@ -27,10 +28,37 @@ def main():
     # deal cards to the players
     for _ in range(2):
         for player in players:
-            player.add_card(dealer_deck.deal())
+            player.add_card(dealer_deck.deal()[0])
+        dealer.add_card(dealer_deck.deal()[0])
 
     for player in players:
-        print(player)
+        awaiting_input = True
+        print(f'Hey {player.name}, your cards are:')
+        while awaiting_input:
+            player.show_hand()
+            if player.points > 21:
+                print(f'Bust! You have {player.points} points')
+                break
+            while True:
+                response = input('Would you like to (h)it or (s)tay? ')
+                if response == 'h':
+                    player.add_card(dealer_deck.deal()[0])
+                    break
+                elif response == 's':
+                    awaiting_input = False
+                    break
+
+    print(f'The dealer has:')
+    dealer.show_hand()
+    while dealer.points < 17:
+        dealer.add_card(dealer_deck.deal()[0])
+        print('The dealer hits, and now has:')
+        dealer.show_hand()
+    if dealer.points > 21:
+        print(f'Dealer busts! with {dealer.points} points')
+    elif dealer.points > 17 and dealer.points <= 21:
+        print(f'Dealer stays with {dealer.points} points')
+
 
 
 if __name__ == '__main__':
