@@ -54,6 +54,16 @@ class Deck:
     def check_value(self):
         """ return the number of points this hand is worth """
         total = 0
+        ace_total = 0
         for card in self.cards:
-            total += card.points()
+            points = card.points()
+            if points == 11:
+                ace_total += 1
+            else:
+                total += points
+        for _ in range(ace_total):
+            if total + 11 > 21:
+                total += 1
+            else:
+                total += 11
         return total

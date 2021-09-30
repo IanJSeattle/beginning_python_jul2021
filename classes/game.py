@@ -5,6 +5,29 @@ from card import Card
 from deck import Deck
 from player import Player
 
+def print_scores(dealer, players):
+    """ print out everyone's score, and whether they beat the dealer or
+    not. """
+    for player in players:
+        if player.points > 21:
+            print(f'{player.name} busts with {player.points}')
+            continue
+
+        if dealer.points > 21:
+            print(f'{player.name} wins with {player.points} vs. the dealer, '
+                  f'who busted with {dealer.points}')
+            continue
+
+        if dealer.points > player.points:
+            print(f'{player.name} loses with {player.points} vs. the dealer, '
+                  f'who has {dealer.points}')
+        elif player.points > dealer.points:
+            print(f'{player.name} wins with {player.points} vs. the dealer, '
+                  f'who has {dealer.points}')
+        else:
+            print(f'{player.name} ties with {player.points} vs. the dealer, '
+                  f'who has {dealer.points}')
+
 def main():
     """ this is the main function """
     print('Welcome to blackjack!')
@@ -37,7 +60,7 @@ def main():
         while awaiting_input:
             player.show_hand()
             if player.points > 21:
-                print(f'Bust! You have {player.points} points')
+                print(f'*** Bust! You have {player.points} points')
                 break
             while True:
                 response = input('Would you like to (h)it or (s)tay? ')
@@ -55,10 +78,11 @@ def main():
         print('The dealer hits, and now has:')
         dealer.show_hand()
     if dealer.points > 21:
-        print(f'Dealer busts! with {dealer.points} points')
-    elif dealer.points > 17 and dealer.points <= 21:
+        print(f'*** Dealer busts! with {dealer.points} points')
+    elif dealer.points >= 17 and dealer.points <= 21:
         print(f'Dealer stays with {dealer.points} points')
 
+    print_scores(dealer, players)
 
 
 if __name__ == '__main__':
